@@ -35,7 +35,8 @@ AlienRepo repo;
 		System.out.println(repo.findByAname("veeru"));
 		System.out.println("================================================");
 		System.out.println(repo.findByAidGreaterThan(1));
-		
+		System.out.println("================================================");
+		System.out.println(repo.findByAnameSorted("veeru"));
 		mv.addObject(alien);
 		return mv;
 		
