@@ -8,14 +8,15 @@
 </head>
 <body>
 
+Enter the details to add Alien <br>
 	<form action="addAlien">
-	<input type="text" name="aid"><br>
-	<input type="text" name="aname"><br>
+	Alien id : <input type="text" name="aid"><br>
+	Alien name : <input type="text" name="aname"><br>
 	<input type="submit">
-	</form>
-	
+	</form><br>
+Enter the details to get Alien details<br>	
 	<form action="getAlien">
-	<input type="text" name="aid"><br>
+	Alien id :<input type="text" name="aid"><br>
 	<input type="submit">
 	</form>
 	
