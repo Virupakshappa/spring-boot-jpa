@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.janadri.demo.dao.AlienDao;
+import com.janadri.demo.dao.AlienRepo;
 import com.janadri.demo.model.Alien;
 
 @Controller
 public class AlienController {
 
 @Autowired
-AlienDao dao;
+AlienRepo repo;
 	
 	@RequestMapping("/")
 	public String home() {
@@ -23,14 +23,19 @@ AlienDao dao;
 	
 	@RequestMapping("addAlien")
 	public String addAlien(Alien alien) {
-		dao.save(alien);
+		repo.save(alien);
 		return "return.jsp";
 		
 	}
 	@RequestMapping("getAlien")
 	public ModelAndView getAlien(@RequestParam int aid) {
 		ModelAndView mv = new ModelAndView("getAlien.jsp");
-		Alien alien = dao.findById(aid).orElse(new Alien());
+		Alien alien = repo.findById(aid).orElse(new Alien());
+		
+		System.out.println(repo.findByAname("veeru"));
+		System.out.println("================================================");
+		System.out.println(repo.findByAidGreaterThan(1));
+		
 		mv.addObject(alien);
 		return mv;
 		

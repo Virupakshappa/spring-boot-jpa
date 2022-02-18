@@ -1,1 +1,0 @@
-INSERT INTO alien VALUES (1, 'veeru'),(2, 'janadri');
